@@ -1,0 +1,19 @@
+function palindrome(str) {
+  let test = str
+                .toLowerCase()
+                .replaceAll(/[^a-zA-Z0-9]/g, "");
+  let swapArr = [];
+  for (let i = test.length - 1; i >= 0; i--) {
+    swapArr.push(test[i]);
+  };
+  if (swapArr.join('') == test) {
+    return true;
+  } else {
+    return false;
+  };
+};
+
+palindrome("eye");
+console.log(palindrome("2A3*3a2"));
+console.log(palindrome('2_A3*3#A2'));
+console.log(palindrome("0_0 (: /-\ :) 0-0"));
